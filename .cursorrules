@@ -1,0 +1,47 @@
+# Project Context
+
+This is a personal portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.
+
+## Tech Stack
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS
+- Velite (Content management)
+- shadcn/ui (Components)
+- Biome (Linting & Formatting)
+
+## Code Style
+- Use functional components with TypeScript
+- Use Tailwind for styling (no CSS modules)
+- Use server components by default, client components only when needed
+- Follow Next.js App Router conventions
+- Use Biome for linting and formatting
+
+## File Naming
+- Components: PascalCase (e.g., BlogCard.tsx)
+- Utils: camelCase (e.g., formatDate.ts)
+- Pages: lowercase (e.g., page.tsx)
+- Config files: lowercase with dashes (e.g., site-config.ts)
+
+## Component Structure
+- Export component as named export
+- Include JSDoc comments for complex components
+- Use TypeScript interfaces for props
+- Props interface should be named ComponentNameProps
+
+## Content
+- Blog posts in content/blog/*.mdx
+- Projects in content/projects/*.mdx
+- Use frontmatter for metadata
+- Velite will generate type-safe content
+
+## Styling
+- Use Tailwind utility classes
+- Use CSS variables for theming
+- Support dark mode with next-themes
+- Follow shadcn/ui patterns
+
+## Imports
+- Use @ alias for src imports
+- Group imports: external, internal, relative
+- Use named exports over default exports

@@ -1,0 +1,114 @@
+---
+title: "Getting Started with Next.js 15"
+description: "A comprehensive guide to building modern web applications with Next.js 15 and the App Router."
+date: 2026-02-23
+published: true
+tags: ["nextjs", "react", "tutorial", "web-development"]
+---
+
+# Getting Started with Next.js 15
+
+Next.js 15 brings powerful features for building modern web applications. In this guide, we'll explore the fundamentals and best practices.
+
+## Why Next.js?
+
+Next.js is a React framework that provides:
+
+- **Server-Side Rendering (SSR)** - Better SEO and performance
+- **Static Site Generation (SSG)** - Pre-rendered pages
+- **API Routes** - Backend functionality
+- **File-based Routing** - Intuitive page structure
+- **Image Optimization** - Automatic image optimization
+
+## App Router vs Pages Router
+
+Next.js 15 uses the App Router by default, which offers:
+
+- React Server Components
+- Improved data fetching
+- Better layouts and templates
+- Streaming and Suspense support
+
+## Creating Your First Page
+
+```tsx
+// app/page.tsx
+export default function Home() {
+  return (
+    <main>
+      <h1>Welcome to Next.js!</h1>
+    </main>
+  );
+}
+```
+
+## Key Features
+
+### 1. Server Components
+
+By default, all components in the App Router are Server Components:
+
+```tsx
+// This runs on the server
+async function getData() {
+  const res = await fetch('https://api.example.com/data');
+  return res.json();
+}
+
+export default async function Page() {
+  const data = await getData();
+  return <div>{data.title}</div>;
+}
+```
+
+### 2. Client Components
+
+Use `"use client"` for interactive components:
+
+```tsx
+"use client";
+
+import { useState } from 'react';
+
+export default function Counter() {
+  const [count, setCount] = useState(0);
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+}
+```
+
+### 3. Layouts
+
+Create shared layouts for your pages:
+
+```tsx
+// app/layout.tsx
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        <nav>Navigation</nav>
+        {children}
+        <footer>Footer</footer>
+      </body>
+    </html>
+  );
+}
+```
+
+## Best Practices
+
+1. **Use Server Components by default** - Only use Client Components when needed
+2. **Optimize images** - Use the `next/image` component
+3. **Implement proper SEO** - Use metadata API
+4. **Code splitting** - Next.js handles this automatically
+5. **Type safety** - Use TypeScript for better DX
+
+## Conclusion
+
+Next.js 15 is a powerful framework that makes building modern web applications easier and more efficient. Start building today!
+
+## Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev)
+- [Vercel Platform](https://vercel.com)
