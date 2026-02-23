@@ -1,17 +1,17 @@
 export const siteConfig = {
-  name: "Gnourt's Portfolio",
+  name: "Truong Dev",
   description: "Personal website and blog showcasing projects and articles",
-  url: "https://gnourt.dev",
+  url: "https://truongdevvn.com",
   author: {
-    name: "Gnourt",
-    email: "your@email.com",
-    twitter: "@gnourt",
+    name: "Truong",
+    email: "Hatruong219.qb@gmail.com",
+    twitter: "@truongdev",
     github: "gnourt",
   },
   links: {
-    twitter: "https://twitter.com/gnourt",
+    twitter: "https://twitter.com/truongdev",
     github: "https://github.com/gnourt",
-    linkedin: "https://linkedin.com/in/gnourt",
+    linkedin: "https://linkedin.com/in/truongdev",
   },
 };
 
