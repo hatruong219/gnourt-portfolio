@@ -1,17 +1,18 @@
 export const siteConfig = {
-  name: "Truong Dev",
+  name: "Truong Ha",
   description: "Personal website and blog showcasing projects and articles",
-  url: "https://truongdevvn.com",
+  url: "https://truongha.com",
   author: {
-    name: "Truong",
+    name: "Hoàng Anh Trường",
+    brandName: "Truong Ha",
     email: "Hatruong219.qb@gmail.com",
-    twitter: "@truongdev",
-    github: "gnourt",
+    twitter: "@truongha",
+    github: "hatruong219",
   },
   links: {
-    twitter: "https://twitter.com/truongdev",
-    github: "https://github.com/gnourt",
-    linkedin: "https://linkedin.com/in/truongdev",
+    twitter: "https://twitter.com/truongha",
+    github: "https://github.com/hatruong219",
+    linkedin: "https://linkedin.com/in/hatruong219",
   },
 };
 

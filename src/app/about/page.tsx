@@ -3,14 +3,14 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `Learn more about ${siteConfig.author.name}`,
+  description: `Tìm hiểu thêm về ${siteConfig.author.name}`,
 };
 
 const skills = [
-  { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
-  { category: "Backend", items: ["Node.js", "Express", "REST APIs"] },
-  { category: "Tools", items: ["Git", "VS Code", "Docker", "Vercel"] },
-  { category: "Learning", items: ["System Design", "DevOps", "Open Source"] },
+  { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS"] },
+  { category: "Backend", items: ["Node.js", "Express", "REST APIs", "SQL"] },
+  { category: "Tools & DevOps", items: ["Git", "VS Code", "Docker", "Vercel", "AWS"] },
+  { category: "Đang tìm hiểu", items: ["System Design", "DevOps", "Open Source", "AI/ML"] },
 ];
 
 export default function AboutPage() {
@@ -20,41 +20,42 @@ export default function AboutPage() {
         {/* Intro */}
         <div className="space-y-4">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            About Me
+            Về tôi
           </h1>
           <p className="text-lg text-muted-foreground max-w-[700px]">
-            Hi! I&apos;m {siteConfig.author.name}, a passionate developer who loves
-            building things for the web. I enjoy creating beautiful, performant,
-            and accessible web applications.
+            Xin chào! Tôi là <strong>{siteConfig.author.name}</strong> — một
+            lập trình viên đam mê xây dựng những sản phẩm web đẹp, nhanh và
+            thân thiện với người dùng.
           </p>
         </div>
 
         {/* Story */}
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold tracking-tight">My Story</h2>
+          <h2 className="text-2xl font-bold tracking-tight">Câu chuyện của tôi</h2>
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <p>
-              I started my journey in software development with a curiosity for
-              how things work on the internet. Over time, that curiosity turned
-              into a passion for creating meaningful digital experiences.
+              Hành trình của tôi trong lĩnh vực phát triển phần mềm bắt đầu từ
+              sự tò mò về cách mọi thứ hoạt động trên internet. Theo thời gian,
+              sự tò mò đó đã trở thành niềm đam mê tạo ra những trải nghiệm số
+              có ý nghĩa.
             </p>
             <p>
-              I believe in writing clean, maintainable code and constantly
-              improving my craft. When I&apos;m not coding, you can find me reading
-              tech blogs, contributing to open source, or exploring new
-              technologies.
+              Tôi tin vào việc viết code sạch, dễ bảo trì và không ngừng cải
+              thiện kỹ năng của mình. Khi không code, bạn có thể thấy tôi đọc
+              blog công nghệ, khám phá công nghệ mới, hoặc làm việc trên các dự
+              án cá nhân.
             </p>
             <p>
-              This website serves as my digital garden where I share my
-              thoughts, document my learning process, and showcase the projects
-              I&apos;ve worked on.
+              Website này là không gian số của tôi — nơi tôi chia sẻ suy nghĩ,
+              ghi lại quá trình học hỏi, và giới thiệu các dự án đã làm. Hãy
+              thoải mái khám phá nhé!
             </p>
           </div>
         </div>
 
         {/* Skills */}
         <div className="space-y-6">
-          <h2 className="text-2xl font-bold tracking-tight">Skills & Technologies</h2>
+          <h2 className="text-2xl font-bold tracking-tight">Kỹ năng & Công nghệ</h2>
           <div className="grid gap-6 sm:grid-cols-2">
             {skills.map((skillGroup) => (
               <div key={skillGroup.category} className="space-y-2">
@@ -76,17 +77,17 @@ export default function AboutPage() {
 
         {/* Contact CTA */}
         <div className="rounded-lg border bg-card p-8 text-center space-y-4">
-          <h2 className="text-2xl font-bold">Let&apos;s Connect</h2>
+          <h2 className="text-2xl font-bold">Kết nối với tôi</h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            I&apos;m always open to discussing new projects, creative ideas, or
-            opportunities to be part of your vision.
+            Tôi luôn sẵn sàng thảo luận về các dự án mới, ý tưởng sáng tạo,
+            hoặc cơ hội hợp tác.
           </p>
           <div className="flex justify-center gap-4 text-sm">
             <a
               href={`mailto:${siteConfig.author.email}`}
               className="font-medium text-primary hover:underline"
             >
-              {siteConfig.author.email}
+              Email
             </a>
             <span className="text-muted-foreground">|</span>
             <a

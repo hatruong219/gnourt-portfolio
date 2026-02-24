@@ -18,11 +18,12 @@ export default function Home() {
         <div className="flex flex-col items-start gap-4">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Hi, I&apos;m{" "}
-            <span className="text-primary">{siteConfig.author.name}</span>
+            <span className="text-primary">{siteConfig.author.brandName}</span>
           </h1>
           <p className="max-w-[600px] text-lg text-muted-foreground sm:text-xl">
-            {siteConfig.description}. I write about web development, share my
-            projects, and document my learning journey.
+            A developer passionate about building things for the web. I write
+            about web development, share my projects, and document my learning
+            journey.
           </p>
           <div className="flex gap-4 mt-4">
             <Button asChild>

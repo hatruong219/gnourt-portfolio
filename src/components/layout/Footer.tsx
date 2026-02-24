@@ -15,7 +15,7 @@ export function Footer() {
               rel="noreferrer"
               className="font-medium underline underline-offset-4 hover:text-primary"
             >
-              {siteConfig.author.name}
+              {siteConfig.author.brandName}
             </Link>
             . Source code on{" "}
             <Link
