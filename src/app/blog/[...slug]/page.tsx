@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import { ArrowLeft, Calendar } from "lucide-react";
-import { posts } from "@/content";
-import { formatDate } from "@/lib/velite";
+import { MdxContent } from "@/components/blog/MdxContent";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MdxContent } from "@/components/blog/MdxContent";
+import { posts } from "@/content";
+import { formatDate } from "@/lib/velite";
+import { ArrowLeft, Calendar } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string[] }>;
@@ -17,9 +17,7 @@ async function getPostFromParams(slug: string[]) {
   return posts.find((post) => post.slugAsParams === slugStr);
 }
 
-export async function generateMetadata({
-  params,
-}: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostFromParams(slug);
 
@@ -34,9 +32,11 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
-  return posts.map((post) => ({
-    slug: post.slugAsParams.split("/"),
-  }));
+  return posts
+    .filter((post) => post.published)
+    .map((post) => ({
+      slug: post.slugAsParams.split("/"),
+    }));
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -58,9 +58,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <div className="space-y-4 mb-8">
         <h1 className="text-4xl font-bold tracking-tight">{post.title}</h1>
-        {post.description && (
-          <p className="text-xl text-muted-foreground">{post.description}</p>
-        )}
+        {post.description && <p className="text-xl text-muted-foreground">{post.description}</p>}
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-1">
             <Calendar className="h-4 w-4" />

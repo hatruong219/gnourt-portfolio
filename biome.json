@@ -7,13 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": [
-      "node_modules",
-      ".next",
-      "out",
-      "build",
-      ".velite"
-    ]
+    "ignore": ["node_modules", ".next", "out", "build", ".velite"]
   },
   "formatter": {
     "enabled": true,

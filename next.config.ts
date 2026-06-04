@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: false,
   },
+  async redirects() {
+    return [{ source: "/about", destination: "/", permanent: true }];
+  },
   webpack: (config) => {
     config.plugins.push(new VeliteWebpackPlugin());
     return config;
@@ -16,6 +19,7 @@ const nextConfig: NextConfig = {
 
 class VeliteWebpackPlugin {
   static started = false;
+  // biome-ignore lint/suspicious/noExplicitAny: webpack compiler type from velite plugin
   apply(compiler: any) {
     compiler.hooks.beforeCompile.tapPromise("VeliteWebpackPlugin", async () => {
       if (VeliteWebpackPlugin.started) return;

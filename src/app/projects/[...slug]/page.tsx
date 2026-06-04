@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import { ArrowLeft, Calendar, ExternalLink, Github } from "lucide-react";
-import { projects } from "@/content";
-import { formatDate } from "@/lib/velite";
+import { MdxContent } from "@/components/blog/MdxContent";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MdxContent } from "@/components/blog/MdxContent";
+import { projects } from "@/content";
+import { formatDate } from "@/lib/velite";
+import { ArrowLeft, Calendar, ExternalLink, Github } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string[] }>;
@@ -17,9 +17,7 @@ async function getProjectFromParams(slug: string[]) {
   return projects.find((project) => project.slugAsParams === slugStr);
 }
 
-export async function generateMetadata({
-  params,
-}: ProjectPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = await getProjectFromParams(slug);
 
@@ -34,9 +32,11 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
-  return projects.map((project) => ({
-    slug: project.slugAsParams.split("/"),
-  }));
+  return projects
+    .filter((project) => project.published)
+    .map((project) => ({
+      slug: project.slugAsParams.split("/"),
+    }));
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
@@ -59,9 +59,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <div className="space-y-4 mb-8">
         <h1 className="text-4xl font-bold tracking-tight">{project.title}</h1>
         {project.description && (
-          <p className="text-xl text-muted-foreground">
-            {project.description}
-          </p>
+          <p className="text-xl text-muted-foreground">{project.description}</p>
         )}
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-1">

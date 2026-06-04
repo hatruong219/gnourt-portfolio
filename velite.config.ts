@@ -1,4 +1,4 @@
-import { defineConfig, defineCollection, s } from "velite";
+import { defineCollection, defineConfig, s } from "velite";
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,

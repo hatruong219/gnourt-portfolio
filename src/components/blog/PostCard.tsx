@@ -1,15 +1,9 @@
-import Link from "next/link";
-import { Calendar } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatDate } from "@/lib/velite";
 import type { Post } from "@/lib/velite";
+import { Calendar } from "lucide-react";
+import Link from "next/link";
 
 interface PostCardProps {
   post: Post;
@@ -24,9 +18,7 @@ export function PostCard({ post }: PostCardProps) {
             {post.title}
           </CardTitle>
           {post.description && (
-            <CardDescription className="line-clamp-2">
-              {post.description}
-            </CardDescription>
+            <CardDescription className="line-clamp-2">{post.description}</CardDescription>
           )}
         </CardHeader>
         <CardContent>

@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import { ProjectCard } from "@/components/blog/ProjectCard";
 import { projects } from "@/content";
 import { getPublishedProjects } from "@/lib/velite";
-import { ProjectCard } from "@/components/blog/ProjectCard";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -12,12 +12,10 @@ export default function ProjectsPage() {
   const publishedProjects = getPublishedProjects(projects);
 
   return (
-    <section className="container px-4 mx-auto max-w-4xl py-16 md:py-24">
+    <section className="container px-4 mx-auto max-w-6xl py-16 md:py-24">
       <div className="space-y-8">
         <div className="space-y-2">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Projects
-          </h1>
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Projects</h1>
           <p className="text-lg text-muted-foreground">
             A collection of projects I&apos;ve built and contributed to.
           </p>

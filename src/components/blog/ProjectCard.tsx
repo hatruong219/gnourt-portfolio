@@ -1,16 +1,10 @@
-import Link from "next/link";
-import { Calendar, ExternalLink, Github } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatDate } from "@/lib/velite";
 import type { Project } from "@/lib/velite";
+import { Calendar, ExternalLink, Github } from "lucide-react";
+import Link from "next/link";
 
 interface ProjectCardProps {
   project: Project;
@@ -24,9 +18,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <Link href={`/${project.slug}`}>{project.title}</Link>
         </CardTitle>
         {project.description && (
-          <CardDescription className="line-clamp-2">
-            {project.description}
-          </CardDescription>
+          <CardDescription className="line-clamp-2">{project.description}</CardDescription>
         )}
       </CardHeader>
       <CardContent>

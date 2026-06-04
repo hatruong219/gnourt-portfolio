@@ -1,18 +1,20 @@
 export const siteConfig = {
   name: "Truong Ha",
-  description: "Personal website and blog showcasing projects and articles",
+  description:
+    "Backend Engineer with 4+ years of experience in Node.js, NestJS, Ruby on Rails, GCP, and AWS. Available for freelance projects.",
   url: "https://truongha.com",
   author: {
-    name: "Hoàng Anh Trường",
+    name: "Truong Hoang Anh",
     brandName: "Truong Ha",
-    email: "Hatruong219.qb@gmail.com",
-    twitter: "@truongha",
+    email: "hatruong219.qb@gmail.com",
     github: "hatruong219",
   },
   links: {
-    twitter: "https://twitter.com/truongha",
     github: "https://github.com/hatruong219",
     linkedin: "https://linkedin.com/in/hatruong219",
+    email: "mailto:hatruong219.qb@gmail.com",
+    upwork: "", // TODO: paste your Upwork profile URL here
+    fiverr: "", // TODO: paste your Fiverr profile URL here (optional)
   },
 };
 
