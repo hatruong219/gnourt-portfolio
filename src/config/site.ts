@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: "Truong Ha",
+  name: "Truong H.A",
   description:
     "Backend Engineer with 4+ years of experience in Node.js, NestJS, Ruby on Rails, GCP, and AWS. Available for freelance projects.",
   url: "https://truongha.com",
   author: {
     name: "Truong Hoang Anh",
-    brandName: "Truong Ha",
+    brandName: "Truong H.A",
     email: "hatruong219.qb@gmail.com",
     github: "hatruong219",
   },

@@ -33,6 +33,7 @@ const projects = defineCollection({
       published: s.boolean().default(true),
       tags: s.array(s.string()).optional(),
       link: s.string().url().optional(),
+      linkLabel: s.string().optional(),
       github: s.string().url().optional(),
       body: s.mdx(),
     })

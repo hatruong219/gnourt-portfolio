@@ -5,9 +5,31 @@ import { siteConfig } from "@/config/site";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { TranslationKey } from "@/lib/i18n";
 import { motion } from "framer-motion";
-import { ArrowRight, GraduationCap, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Check, GraduationCap, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+function CopyEmailButton() {
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(siteConfig.author.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+  return (
+    <Button variant="outline" size="lg" onClick={handleCopy}>
+      {copied ? (
+        <Check className="mr-2 h-4 w-4 text-green-500" />
+      ) : (
+        <Mail className="mr-2 h-4 w-4" />
+      )}
+      {copied ? "Copied!" : siteConfig.author.email}
+    </Button>
+  );
+}
 
 function IconGithub({ className }: { className?: string }) {
   return (
@@ -178,12 +200,7 @@ export function HomeContent() {
                   LinkedIn
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href={siteConfig.links.email}>
-                  <Mail className="mr-2 h-4 w-4" />
-                  {siteConfig.author.email}
-                </Link>
-              </Button>
+              <CopyEmailButton />
             </div>
 
             {/* Location */}
@@ -371,12 +388,7 @@ export function HomeContent() {
                   LinkedIn
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href={siteConfig.links.email}>
-                  <Mail className="mr-2 h-4 w-4" />
-                  {siteConfig.author.email}
-                </Link>
-              </Button>
+              <CopyEmailButton />
             </div>
           </div>
         </div>
