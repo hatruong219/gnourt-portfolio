@@ -1,6 +1,7 @@
 # Gnourt's Portfolio
 
 Personal portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.
+Link: https://www.truongha.com/
 
 ## Tech Stack
 
